@@ -208,7 +208,7 @@ function createAns(ans, ind)
 }
 
 /*------
-Function to for Next Questions
+Function for Next Questions
 */
 async function nextIn() {
     let promise = new Promise((resolve) => {
@@ -221,14 +221,14 @@ async function nextIn() {
     createQues(i);
 };
 /*------
-Function to for Previous Questions
+Function for Previous Questions
 */
 async function prevIn() {
     let promise = new Promise((resolve) => {
         while (form.firstChild) {
             form.removeChild(form.lastChild);
         };
-        setTimeout(() => resolve(--questCont.dataset.value));
+        resolve(--questCont.dataset.value);
     });
     let i = await promise; 
     createQues(i);
