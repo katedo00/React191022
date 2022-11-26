@@ -22,6 +22,5 @@ switch (true) {
     break;
   default:
     hocluc = "khong xac dinh";
-    break;
 }
 console.log("Hoc sinh co hoc luc " + hocluc);

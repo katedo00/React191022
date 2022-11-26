@@ -15,39 +15,31 @@
 // - extract an array that contains start point -> end point of input array
 // - if endpoint = undefined => extract an array contains start point -> the end of input array
 
-var input = [2,3,6,8,9,23,16]
-var n=6;
+var input = [2, 3, 6, 8, 9, 23, 16];
+var n = 6;
 var startPoint = 3;
 var endPoint = 5;
 
 // summary of input //
 var sum = 0;
 for (let i = 0; i < input.length; i++) {
-    sum += input[i];
-    if (i === input.length-1)
-    {
-        console.log('Input summary is: '+ sum);
-    }
+  sum += input[i];
+  if (i === input.length - 1) {
+    console.log("Input summary is: " + sum);
+  }
 }
 // check if n is included //
-if (input.includes(n))
-{
-    console.log('n thuoc input' + ` va vi tri cua n la: ${input.indexOf(n)}`)
-    // remove n out of input //
-    input.splice(input.indexOf(n), 1)
-    if (!input.includes(n))
-    {console.log(`n=${n} is removed`)};
+if (input.includes(n)) {
+  console.log("n thuoc input" + ` va vi tri cua n la: ${input.indexOf(n)}`);
+  // remove n out of input //
+  input.splice(input.indexOf(n), 1);
+  if (!input.includes(n)) {
+    console.log(`n=${n} is removed`);
+  }
 }
 // extract array //
 var newarr;
-if (endPoint === undefined)
-{
-    newarr = input.slice(startPoint);
-}
-else newarr = input.slice(startPoint, endPoint+1);
+if (endPoint === undefined) {
+  newarr = input.slice(startPoint);
+} else newarr = input.slice(startPoint, endPoint + 1);
 console.log(newarr.toString());
-
-
-
-
-
