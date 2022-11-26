@@ -1,6 +1,6 @@
 if (!window.localStorage.getItem("json.api")) {
   syncData();
-}
+};
 let json = JSON.parse(window.localStorage.getItem("json.api"));
 drawUser(json);
 async function syncData() {

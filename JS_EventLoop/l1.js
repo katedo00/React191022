@@ -1,4 +1,3 @@
-import fetch from "node-fetch";
 function getData() {
   fetch("https://jsonplaceholder.typicode.com/users", {
   method: "GET",

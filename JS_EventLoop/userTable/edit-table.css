@@ -3,8 +3,6 @@
   box-sizing: border-box;
 }
 div {
-  display: block;
-  padding: 0;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 35px;
@@ -25,6 +23,7 @@ h2 {
 .editable {
   border-collapse: collapse;
   width: 100%;
+  overflow-x: scroll;
 }
 .editable th,
 .editable td {
@@ -52,7 +51,10 @@ button{
   box-sizing: border-box;
   color: #d32c93;;
   cursor: pointer;
-  display: inline-flex;
+  display: block;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
   font-size: 1rem;
   font-weight: 700;
   line-height: 33.4929px;
@@ -63,6 +65,11 @@ button{
   touch-action: manipulation;
   white-space: nowrap;
   word-break: break-word;
+}
+
+td button {
+  display: inline-flex;
+  margin: auto;
 }
 
 button:active,
@@ -90,11 +97,10 @@ button:focus {
   box-shadow: rgba(0, 0, 0, 0.12) 0 1px 3px 0 inset;
   color: #FFFFFF;
 }
-@media screen and (max-width: 1048px)
-{
-  button{
+@media  screen and (max-width: 1048px) {
+  td button {
     display: block;
-    width: 100%;
+    margin: auto;
   }
 }
 @media screen and (max-width: 600px) {
