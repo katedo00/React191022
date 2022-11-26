@@ -89,13 +89,11 @@ function onReset() {
   drawUser(json);
 }
 // (C) INITIALIZE - DOUBLE CLICK TO EDIT CELL
-window.addEventListener("DOMContentLoaded", () => {
-  for (let cell of document.querySelectorAll(".editable td")) {
-    if (cell.childElementCount < 2) {
-      cell.ondblclick = () => editable.edit(cell);
-    }
+for (let cell of document.querySelectorAll(".editable td")) {
+  if (cell.childElementCount < 2) {
+    cell.ondblclick = () => editable.edit(cell);
   }
-});
+}
 var editable = {
   // (C) PROPERTIES
   selected: null, // current selected cell
