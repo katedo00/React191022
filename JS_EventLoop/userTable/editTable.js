@@ -1,9 +1,10 @@
+// // (A) FETCH DATA & UPDATE LOCAL STORAGE
 if (!window.localStorage.getItem("json.api")) {
   syncData();
 };
 let json = JSON.parse(window.localStorage.getItem("json.api"));
 drawUser(json);
-async function syncData() {
+async function syncData(key = '') {
   let promise = new Promise((resolve) => {
     resolve(
       fetch("https://jsonplaceholder.typicode.com/users", {
@@ -18,8 +19,12 @@ async function syncData() {
   });
   let users = await promise;
   window.localStorage.setItem("json.api", JSON.stringify(users));
+  if (key == 'onReset')
+  {
+    drawUser(users);
+  };
 }
-// // (B) DRAW TABLE
+// // (B) DRAW TABLE FUNCTION
 function drawUser(users) {
   for (const index in users) {
     const user = users[index];
@@ -84,9 +89,7 @@ function removeUser(el) {
 // // (B4) RESET BUTTON
 function onReset() {
   document.querySelector(".editable tbody").innerHTML = "";
-  syncData();
-  let json = JSON.parse(window.localStorage.getItem("json.api"));
-  drawUser(json);
+  syncData('onReset');
 }
 // (C) INITIALIZE - DOUBLE CLICK TO EDIT CELL
 for (let cell of document.querySelectorAll(".editable td")) {
