@@ -1,0 +1,36 @@
+
+
+<!doctype html >
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Bai Tap 4 - Search Users By ID</title>
+  <meta name="description" content="Bai tap 4 - Search Box Design">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://kit.fontawesome.com/8deec3630e.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="search.css">;
+</head>
+<body>
+<header>
+    <h1 style="text-align: center;">
+        JavaScript Online Quiz
+    </h1>
+</header>
+<div class="container">
+    <div class="row">
+      <div class="search">
+        <label>Search for user by ID</label>
+        <input type="search" data-search="data-search" placeholder="Search..."/>
+        <button class="search__clear">&times;</button>
+        <div class="recent-search">
+          <button class="clear-btn" disabled="disabled" onclick="clearRecent()">No Recent Items</button>
+          <div class="recent-search__list"></div>
+        </div>
+      </div>
+      <div class="list" id="list" data-searchable="data-searchable"></div>
+    </div>
+</div>
+<script src="search.js"></script>
+</body>
+</html>
